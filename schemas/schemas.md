@@ -21,7 +21,7 @@ Um bom exemplo são tabelas como tipo_exame e fatura_item, que granulam e separa
 
  Caso prefira, abra o site [Database Diagram](https://databasediagram.com/app) e cole o código de ```schema.sql``` para visualizar e movimentar todas as tabelas.
 
- > Por quê deste relacionamento
+ > Por quê deste relacionamento?
  
 Tal relacionamento separa claramente as entidades principais (pacientes, médicos, enfermeiros, leitos, procedimentos) facilitando manutenção e escalabilidade. Também é capaz de evitar redundância de dados através de tabelas de referência, como item_exame.
 
