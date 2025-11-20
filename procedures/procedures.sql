@@ -55,7 +55,7 @@ BEGIN
     FROM internacao WHERE id_internacao = p_id_internacao;
     
     -- Calcular dias
-    v_dias := fn_dias_internacao(p_id_internacao);
+    v_dias := dias_internacao(p_id_internacao);
     
     -- Criar fatura
     INSERT INTO faturamento (id_paciente, data_emissao, valor_total, status_pagamento)
