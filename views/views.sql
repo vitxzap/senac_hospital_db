@@ -86,7 +86,7 @@ JOIN paciente p ON f.id_paciente = p.id_paciente
 WHERE f.status_pagamento = 'Pendente'
 ORDER BY f.data_emissao; -- Ordena pela data de emissao
 -- Uso:
-SELECT * FROM vw_faturas_pendentes WHERE dias_em_aberto > 30 AND id_paciente = 1; 
+SELECT * FROM vw_faturas_pendentes WHERE dias_em_aberto > 30 AND paciente = "nome"; 
 
 
 -- Busca exames realizados por paciente
