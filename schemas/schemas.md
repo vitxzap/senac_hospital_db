@@ -8,7 +8,7 @@ Encontre os esquemas de prototipação do projeto
 
 ![Diagrama er](/schemas/images/er_diagram.png)
 
-Caso prefira, abra o site [Mermaid Live](https://mermaid.live/) e cole o código de ```er_diagram.sql``` para visualizar o diagrama conceitual.
+Caso prefira, abra o site [Mermaid Live](https://mermaid.live/) e cole o código de ```er_diagram.mmd``` para visualizar o diagrama conceitual.
 
 > Por quê deste diagrama?
 
