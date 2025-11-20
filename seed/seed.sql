@@ -19,18 +19,7 @@ INSERT INTO tipo_agendamento (nome, descricao) VALUES ('Procedimento', 'Procedim
 INSERT INTO tipo_agendamento (nome, descricao) VALUES ('Cirurgia', 'Procedimento cirúrgico');
 INSERT INTO tipo_agendamento (nome, descricao) VALUES ('Retorno', 'Consulta de retorno');
 
--- Popular tipos de exame
-INSERT INTO tipo_exame (codigo, nome, descricao, custo_base, id_lab)
-VALUES ('EX001', 'Hemograma Completo', 'Análise completa do sangue', 80.00, 2);
 
-INSERT INTO tipo_exame (codigo, nome, descricao, custo_base, id_lab)
-VALUES ('EX002', 'Raio-X Simples', 'Radiografia simples', 180.00, 3);
-
-INSERT INTO tipo_exame (codigo, nome, descricao, custo_base, id_lab)
-VALUES ('EX003', 'Enzimas Cardíacas', 'Dosagem de troponina e CK-MB', 320.00, 1);
-
-INSERT INTO tipo_exame (codigo, nome, descricao, custo_base, id_lab)
-VALUES ('EX004', 'Ultrassonografia', 'Exame de ultrassom', 220.00, 3);
 
 
 -- Populando PACIENTE (sem dependências)
@@ -140,7 +129,18 @@ VALUES ('PROC009', 'Ecocardiograma', 'Ultrassom do coração', 320.00);
 INSERT INTO procedimento (codigo, nome, descricao, custo_base) 
 VALUES ('PROC010', 'Consulta Pediátrica', 'Consulta com pediatra', 200.00);
 
+-- Popular tipos de exame
+INSERT INTO tipo_exame (codigo, nome, descricao, custo_base, id_lab)
+VALUES ('EX001', 'Hemograma Completo', 'Análise completa do sangue', 80.00, 2);
 
+INSERT INTO tipo_exame (codigo, nome, descricao, custo_base, id_lab)
+VALUES ('EX002', 'Raio-X Simples', 'Radiografia simples', 180.00, 3);
+
+INSERT INTO tipo_exame (codigo, nome, descricao, custo_base, id_lab)
+VALUES ('EX003', 'Enzimas Cardíacas', 'Dosagem de troponina e CK-MB', 320.00, 1);
+
+INSERT INTO tipo_exame (codigo, nome, descricao, custo_base, id_lab)
+VALUES ('EX004', 'Ultrassonografia', 'Exame de ultrassom', 220.00, 3);
 
 
 -- Populando FATURAMENTO (depende de paciente)
