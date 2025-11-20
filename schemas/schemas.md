@@ -10,7 +10,7 @@ Encontre os esquemas de prototipação do projeto
 
 Caso prefira, abra o site [Mermaid Live](https://mermaid.live/) e cole o código de ```er_diagram.mmd``` para visualizar o diagrama conceitual.
 
-> Por quê deste diagrama?
+> Por que deste diagrama?
 
 A escolha deste diagrama se basea na alta granulanidade de tabelas e fácil entendimento do contexto. Com tabelas bem definidas e de responsabilidade única, fica fácil de saber o que cada estrutura faz.
 
@@ -21,7 +21,7 @@ Um bom exemplo são tabelas como tipo_exame e fatura_item, que granulam e separa
 
  Caso prefira, abra o site [Database Diagram](https://databasediagram.com/app) e cole o código de ```schema.sql``` para visualizar e movimentar todas as tabelas.
 
- > Por quê deste relacionamento?
+ > Por que deste relacionamento?
  
 Tal relacionamento separa claramente as entidades principais (pacientes, médicos, enfermeiros, leitos, procedimentos) facilitando manutenção e escalabilidade. Também é capaz de evitar redundância de dados através de tabelas de referência, como item_exame.
 
