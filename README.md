@@ -2,7 +2,7 @@
 Projeto de gerenciamento de sistema hospitalar.
 
 Este projeto conta com:
-- [![Examples](https://img.shields.io/badge/📁-Examples-blue?style=for-the-badge)](./examples/exemplos.md) [![Faturamento](https://img.shields.io/badge/📄-Examples.sql-orange?style=for-the-badge)](./examples/exemplo_faturamento.sql) [![Agendamento internaçãp](https://img.shields.io/badge/📄-Examples.sql-orange?style=for-the-badge)](./examples/exemplo_agendamento_internacao.sql) 
+- [![Examples](https://img.shields.io/badge/📁-Examples-blue?style=for-the-badge)](./examples/exemplos.md) [![Faturamento](https://img.shields.io/badge/📄-Exemplo_faturamento.sql-orange?style=for-the-badge)](./examples/exemplo_faturamento.sql) [![Agendamento internaçãp](https://img.shields.io/badge/📄-Exemplo_agendamento_internacao.sql-orange?style=for-the-badge)](./examples/exemplo_agendamento_internacao.sql) 
 - [![Functions](https://img.shields.io/badge/📁-Functions-blue?style=for-the-badge)](./functions/functions.md) [![Functions](https://img.shields.io/badge/📄-Functions.sql-orange?style=for-the-badge)](./functions/functions.sql)
 - [![Indexes](https://img.shields.io/badge/📁-Indexes-blue?style=for-the-badge)](./indexes/indexes.md) [![Indexes](https://img.shields.io/badge/📄-Indexes.sql-orange?style=for-the-badge)](./indexes/indexes.sql)
 - [![Packages](https://img.shields.io/badge/📁-Packages-blue?style=for-the-badge)](./packages/packages.md) [![Packages](https://img.shields.io/badge/📄-Packages.sql-orange?style=for-the-badge)](./packages/packages.sql)
