@@ -2,7 +2,7 @@
 Projeto de gerenciamento de sistema hospitalar.
 
 Este projeto conta com:
-- [![Examples](https://img.shields.io/badge/📁-Examples-blue?style=for-the-badge)](./examples/examples.md)
+- [![Examples](https://img.shields.io/badge/📁-Examples-blue?style=for-the-badge)](./examples/exemplos.md)
 - [![Functions](https://img.shields.io/badge/📁-Functions-blue?style=for-the-badge)](./functions/functions.md)
 - [![Indexes](https://img.shields.io/badge/📁-Indexes-blue?style=for-the-badge)](./indexes/indexes.md)
 - [![Packages](https://img.shields.io/badge/📁-Packages-blue?style=for-the-badge)](./packages/packages.md)
