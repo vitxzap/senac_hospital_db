@@ -1,5 +1,5 @@
 ﻿## Packages
-Packages disponíveis em ```packes.sql``` agrupam funções e procedures relacionadas para um melhor entendimento de um certo contexto.
+Packages disponíveis em ```packages.sql``` agrupam funções e procedures relacionadas para um melhor entendimento de um certo contexto.
 
 ## Pkg Hospital
 O pacote hospital agrupa em um único contexto, tais functions e procedures:
