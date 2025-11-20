@@ -3,6 +3,7 @@ Projeto de gerenciamento de sistema hospitalar.
 
 Este projeto conta com:
  - [x] Esquemas de prototipação
+ - [x] Exemplos de uso 
  - [x] Packages
  - [x] Procedures
  - [x] Functions
