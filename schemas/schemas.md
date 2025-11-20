@@ -2,7 +2,7 @@
 Encontre os esquemas de prototipação do projeto
 
 ## IDEF0
-
+![IDEF0](/schemas/images/IDEF0.png)
 
 ## Relacionamento e tabelas
 ![Relacionamento](/schemas/images/tabelas.png)
