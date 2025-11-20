@@ -15,7 +15,7 @@ Este projeto conta com:
 Navegue as pastas para encontrar a documentação específica de cada componente do sistema.
 
 Integrantes:
+- Madison Martins
 - Marcelo Cardoso
 - Matheus
 - Victor Santos
-- Madison Martins
