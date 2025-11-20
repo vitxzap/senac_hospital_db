@@ -8,7 +8,7 @@ Relatórios são consultas complexas que retornam dados úteis. trabalham em con
 | vw_medicos_completo | Busca médico por especialidade |
 | vw_enfermeiros_completo | Busca enfermeiros por departamento |
 | vw_status_leitos | Busca leitos por status |
-| vw_faturas_detalhadas | Buscar dados mais detalhados da fatura por id |
+| vw_faturas_detalhadas | Busca dados mais detalhados da fatura por id |
 | vw_faturas_pendentes | Busca faturas pendentes |
 | vw_exames_por_paciente | Busca exames realizados por paciente |
 | vw_historico_paciente | Busca todo o histórico médico do paciente |
