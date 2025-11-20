@@ -12,7 +12,15 @@ JOIN especialidade e ON m.id_especialidade = e.id_especialidade
 JOIN departamento d ON m.id_departamento = d.id_departamento
 ORDER BY m.nome;
 -- Uso:
-SELECT * FROM vw_medicos_completo WHERE especialidade = 'Cardiologista';
+SELECT  
+    id_medico,
+    nome,
+    crm,
+    email,
+    especialidade,
+    departamento 
+FROM vw_medicos_completo 
+WHERE especialidade = 'Cardiologista';
 
 
 -- Buscar enfermeiros por departamento
@@ -27,7 +35,14 @@ FROM enfermeiro e
 JOIN departamento d ON e.id_departamento = d.id_departamento
 ORDER BY d.nome, e.nome;
 -- Uso:
-SELECT * FROM vw_enfermeiros_completo WHERE departamento = 'UTI';
+SELECT
+    id_enfermeiro,
+    nome,
+    coren,
+    email,
+    departamento
+FROM vw_enfermeiros_completo 
+WHERE departamento = 'UTI';
 
 
 -- Buscar leitos por status
@@ -46,7 +61,17 @@ LEFT JOIN internacao i ON l.id_leito = i.id_leito AND i.data_saida IS NULL
 LEFT JOIN paciente p ON i.id_paciente = p.id_paciente
 ORDER BY l.unidade, l.numero;
 -- Uso:
-SELECT * FROM vw_status_leitos WHERE status = 'Disponível' AND tipo = 'UTI';
+SELECT 
+    id_leito, 
+    numero, 
+    unidade, 
+    tipo, 
+    paciente_atual, 
+    data_entrada, 
+    dias_ocupado 
+FROM vw_status_leitos 
+WHERE status = 'Disponível' AND tipo = 'UTI';
+
 
 
 -- Buscar dados mais detalhados da fatura por id
@@ -67,7 +92,20 @@ JOIN paciente p ON f.id_paciente = p.id_paciente
 JOIN fatura_item fi ON f.id_fatura = fi.id_fatura
 ORDER BY f.id_fatura, fi.id_item;
 -- Uso:
-SELECT * FROM vw_faturas_detalhadas WHERE id_fatura = 10;
+SELECT  
+        id_fatura,
+        data_emissao,
+        paciente,
+        documento,
+        tipo_item,
+        quantidade,
+        valor_unitario,
+        valor_total,
+        total_fatura,
+        status_pagamento 
+FROM    vw_faturas_detalhadas 
+WHERE   id_fatura = 10;
+
 
 
 -- Busca faturas pendentes
@@ -86,7 +124,17 @@ JOIN paciente p ON f.id_paciente = p.id_paciente
 WHERE f.status_pagamento = 'Pendente'
 ORDER BY f.data_emissao; -- Ordena pela data de emissao
 -- Uso:
-SELECT * FROM vw_faturas_pendentes WHERE dias_em_aberto > 30 AND paciente = "nome"; 
+SELECT 
+    id_fatura,
+    data_emissao,
+    dias_em_aberto, -- Calcula os dias em aberto da fatura, subtraindo a data do sistema com a data da emissão
+    nome as paciente,
+    email,
+    documento,
+    valor_total,
+    status_pagamento 
+FROM vw_faturas_pendentes 
+WHERE dias_em_aberto > 30 AND paciente = "nome"; 
 
 
 -- Busca exames realizados por paciente
@@ -103,7 +151,14 @@ GROUP BY p.id_paciente, p.nome
 HAVING COUNT(e.id_exame) > 0
 ORDER BY ultimo_exame DESC;
 -- Uso:
-SELECT * FROM vw_exames_por_paciente WHERE exames_pendentes > 0;
+SELECT 
+    id_paciente,
+    paciente,
+    total_exames,
+    ultimo_exame,
+    exames_pendentes
+FROM vw_exames_por_paciente 
+WHERE exames_pendentes > 0;
 
 -- Busca todo o histórico do paciente
 CREATE OR REPLACE VIEW vw_historico_paciente AS
@@ -122,7 +177,18 @@ JOIN medico m ON h.id_medico = m.id_medico
 JOIN especialidade e ON m.id_especialidade = e.id_especialidade
 ORDER BY h.data_registro DESC;
 -- Uso:
-SELECT * FROM vw_historico_paciente WHERE id_paciente = 1;
+SELECT
+    id_historico,
+    data_registro,
+    paciente,
+    documento,
+    medico,
+    especialidade,
+    diagnostico,
+    tratamento
+
+FROM vw_historico_paciente
+WHERE id_paciente = 1;
 
 
 -- Busca todos os atendimentos realizados pelo medico
@@ -142,4 +208,12 @@ GROUP BY m.id_medico, m.nome, e.nome
 ORDER BY total_atendimentos DESC;
 
 -- Uso:
-SELECT * FROM vw_atendimentos_por_medico;
+SELECT
+    id_medico,
+    medico,
+    especialidade,
+    total_atendimentos,
+    realizados,
+    agendados,
+    cancelados
+FROM vw_atendimentos_por_medico;
