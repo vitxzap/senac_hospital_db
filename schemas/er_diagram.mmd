@@ -18,27 +18,28 @@ graph TB
     LABORATORIO[LABORATÓRIO]
     
     %% Relacionamentos
-    PACIENTE ---|realiza| AGENDAMENTO
-    MEDICO ---|atende| AGENDAMENTO
-    LEITO ---|utiliza| AGENDAMENTO
-    TIPO_AGENDAMENTO ---|classifica| AGENDAMENTO
+    PACIENTE ---|1:N realiza| AGENDAMENTO
+    MEDICO ---|1:N atende| AGENDAMENTO
+    LEITO ---|1:N utiliza| AGENDAMENTO
+    TIPO_AGENDAMENTO ---|1:N classifica| AGENDAMENTO
     
-    AGENDAMENTO ---|possui| PROCEDIMENTO
+    AGENDAMENTO ---|1:N possui| PROCEDIMENTO
     
-    PACIENTE ---|possui| INTERNACAO
-    LEITO ---|ocupa| INTERNACAO
+    PACIENTE ---|1:N possui| INTERNACAO
+    LEITO ---|1:N ocupa| INTERNACAO
     
-    PACIENTE ---|gera| FATURAMENTO
-    FATURAMENTO ---|contém| FATURA_ITEM
+    PACIENTE ---|1:N gera| FATURAMENTO
+    FATURAMENTO ---|1:N contém| FATURA_ITEM
     
-    PACIENTE ---|possui| HISTORICO
-    MEDICO ---|registra| HISTORICO
+    PACIENTE ---|1:N possui| HISTORICO
+    MEDICO ---|1:N registra| HISTORICO
     
-    PACIENTE ---|realiza| EXAME
-    LABORATORIO ---|executa| EXAME
-    TIPO_EXAME ---|classifica| EXAME
-    LABORATORIO ---|oferece| TIPO_EXAME
+    PACIENTE ---|1:N realiza| EXAME
+    LABORATORIO ---|1:N executa| EXAME
+    TIPO_EXAME ---|1:N classifica| EXAME
+    LABORATORIO ---|1:N oferece| TIPO_EXAME
     
-    ESPECIALIDADE ---|possui| MEDICO
-    DEPARTAMENTO ---|aloca| MEDICO
-    DEPARTAMENTO ---|aloca| ENFERMEIRO
+    ESPECIALIDADE ---|1:N possui| MEDICO
+    DEPARTAMENTO ---|1:N aloca| MEDICO
+    DEPARTAMENTO ---|1:N aloca| ENFERMEIRO
+    
