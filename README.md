@@ -18,5 +18,5 @@ Navegue pelas pastas para encontrar a documentação específica de cada compone
 Integrantes:
 - Madison Martins
 - Marcelo Cardoso
-- Matheus
+- Matheus Ribeiro
 - Victor Santos
