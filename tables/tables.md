@@ -1,5 +1,5 @@
 # Tabelas
-Tabelas são a espinha dorsal do sistema.
+Tabelas são a espinha dorsal do sistema. Abaixo você encontra todas as tabelas criadas no bancod. Acesse ```tables.sql``` para visualizar sua estrutura.
 
 ## Tabelas disponíveis
  - Paciente
