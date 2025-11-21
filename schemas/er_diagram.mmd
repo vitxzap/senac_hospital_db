@@ -1,45 +1,42 @@
-graph TB
-    %% Entidades
-    PACIENTE[PACIENTE]
-    MEDICO[MÉDICO]
-    ENFERMEIRO[ENFERMEIRO]
-    DEPARTAMENTO[DEPARTAMENTO]
-    ESPECIALIDADE[ESPECIALIDADE]
-    LEITO[LEITO]
-    AGENDAMENTO[AGENDAMENTO]
-    TIPO_AGENDAMENTO[TIPO AGENDAMENTO]
-    PROCEDIMENTO[PROCEDIMENTO]
-    INTERNACAO[INTERNAÇÃO]
-    FATURAMENTO[FATURAMENTO]
-    FATURA_ITEM[FATURA ITEM]
-    HISTORICO[HISTÓRICO MÉDICO]
-    EXAME[EXAME]
-    TIPO_EXAME[TIPO EXAME]
-    LABORATORIO[LABORATÓRIO]
-    
-    %% Relacionamentos
-    PACIENTE ---|1:N realiza| AGENDAMENTO
-    MEDICO ---|1:N atende| AGENDAMENTO
-    LEITO ---|1:N utiliza| AGENDAMENTO
-    TIPO_AGENDAMENTO ---|1:N classifica| AGENDAMENTO
-    
-    AGENDAMENTO ---|1:N possui| PROCEDIMENTO
-    
-    PACIENTE ---|1:N possui| INTERNACAO
-    LEITO ---|1:N ocupa| INTERNACAO
-    
-    PACIENTE ---|1:N gera| FATURAMENTO
-    FATURAMENTO ---|1:N contém| FATURA_ITEM
-    
-    PACIENTE ---|1:N possui| HISTORICO
-    MEDICO ---|1:N registra| HISTORICO
-    
-    PACIENTE ---|1:N realiza| EXAME
-    LABORATORIO ---|1:N executa| EXAME
-    TIPO_EXAME ---|1:N classifica| EXAME
-    LABORATORIO ---|1:N oferece| TIPO_EXAME
-    
-    ESPECIALIDADE ---|1:N possui| MEDICO
-    DEPARTAMENTO ---|1:N aloca| MEDICO
-    DEPARTAMENTO ---|1:N aloca| ENFERMEIRO
-    
+---
+config:
+  layout: fixed
+---
+flowchart TB
+    PACIENTE["PACIENTE"] -- 1:N realiza --> AGENDAMENTO["AGENDAMENTO"] & EXAME["EXAME"]
+    MEDICO["MÉDICO"] -- 1:N atende --> AGENDAMENTO
+    LEITO["LEITO"] -- 1:N utiliza --> AGENDAMENTO
+    TIPO_AGENDAMENTO["TIPO AGENDAMENTO"] -- 1:N classifica --> AGENDAMENTO
+    AGENDAMENTO -- 1:N contém --> AGEND_PROC["AGENDAMENTO_PROCEDIMENTO"]
+    PROCEDIMENTO["PROCEDIMENTO"] -- 1:N inclui --> AGEND_PROC
+    PACIENTE -- 1:N possui --> INTERNACAO["INTERNAÇÃO"] & HISTORICO["HISTÓRICO MÉDICO"]
+    LEITO -- 1:N ocupa --> INTERNACAO
+    PACIENTE -- 1:N gera --> FATURAMENTO["FATURAMENTO"]
+    FATURAMENTO -- 1:N contém --> FATURA_ITEM["FATURA ITEM"]
+    MEDICO -- 1:N registra --> HISTORICO
+    LABORATORIO["LABORATÓRIO"] -- 1:N executa --> EXAME
+    TIPO_EXAME["TIPO EXAME"] -- 1:N classifica --> EXAME
+    LABORATORIO -- 1:N oferece --> TIPO_EXAME
+    ESPECIALIDADE["ESPECIALIDADE"] -- 1:N possui --> MEDICO
+    DEPARTAMENTO["DEPARTAMENTO"] -- 1:N aloca médicos --> MEDICO
+    DEPARTAMENTO -- 1:N aloca enfermeiros --> ENFERMEIRO["ENFERMEIRO"]
+
+     PACIENTE:::entidade
+     AGENDAMENTO:::entidade
+     EXAME:::entidade
+     MEDICO:::entidade
+     LEITO:::entidade
+     TIPO_AGENDAMENTO:::entidade
+     AGEND_PROC:::intermediaria
+     PROCEDIMENTO:::entidade
+     INTERNACAO:::entidade
+     HISTORICO:::entidade
+     FATURAMENTO:::entidade
+     FATURA_ITEM:::entidade
+     LABORATORIO:::entidade
+     TIPO_EXAME:::entidade
+     ESPECIALIDADE:::entidade
+     DEPARTAMENTO:::entidade
+     ENFERMEIRO:::entidade
+    classDef entidade fill:#4A90E2,stroke:#2E5C8A,stroke-width:2px,color:#fff
+    classDef intermediaria fill:#E8A87C,stroke:#C38D5C,stroke-width:2px,color:#fff
